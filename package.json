@@ -4,7 +4,7 @@
   "description": "An opiniated but customizable react starter kit",
   "main": "index.js",
   "scripts": {
-    "start":"node_modules/.bin/webpack-dev-server",
+    "start": "node_modules/.bin/webpack-dev-server",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -22,6 +22,8 @@
     "react-dom": "^16.8.6"
   },
   "devDependencies": {
+    "@babel/core": "^7.4.4",
+    "@babel/node": "^7.2.2",
     "prettier": "^1.17.0",
     "webpack": "^4.31.0",
     "webpack-cli": "^3.3.2",
