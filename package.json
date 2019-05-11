@@ -15,5 +15,9 @@
   "bugs": {
     "url": "https://github.com/M-ZubairAhmed/react-scaffolding-kit/issues"
   },
-  "homepage": "https://github.com/M-ZubairAhmed/react-scaffolding-kit#readme"
+  "homepage": "https://github.com/M-ZubairAhmed/react-scaffolding-kit#readme",
+  "dependencies": {
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
+  }
 }
