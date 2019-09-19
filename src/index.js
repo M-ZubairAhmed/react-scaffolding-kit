@@ -1,13 +1,28 @@
-import React from "react"
-import { render } from "react-dom"
+import React from 'react'
+import { render } from 'react-dom'
+import { createStore, applyMiddleware } from 'redux'
+import { Provider } from 'react-redux'
+import reduxThunk from 'redux-thunk'
+import { composeWithDevTools } from 'redux-devtools-extension/developmentOnly'
 
-import './index.scss'
+// Routes app index
+import App from '_routes'
+import reducers from '_reducers'
 
-const App = () => (
-  <div>
-    <h1>React scaffolding kit</h1>
-    <strong>An opiniated but customizable react starter kit</strong>
-  </div>
+let store
+if (process.env.NODE_ENV === 'development') {
+  // Including redux tools only in dev mode
+  store = createStore(
+    reducers,
+    composeWithDevTools(applyMiddleware(reduxThunk)),
+  )
+} else {
+  store = createStore(reducers, applyMiddleware(reduxThunk))
+}
+
+render(
+  <Provider store={store}>
+    <App />
+  </Provider>,
+  document.getElementById('REACT_APP_ROOT_FOR_RENDER'),
 )
-
-render(<App />, document.getElementById("REACT_ROOT"))
