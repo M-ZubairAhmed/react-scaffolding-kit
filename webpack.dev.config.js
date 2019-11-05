@@ -1,7 +1,7 @@
 import webpack from 'webpack'
 import path from 'path'
 import htmlWebpackPlugin from 'html-webpack-plugin'
-import cleanWebpackPlugin from 'clean-webpack-plugin'
+import { CleanWebpackPlugin } from 'clean-webpack-plugin'
 import writeFilePlugin from 'write-file-webpack-plugin'
 import copyWebpackPlugin from 'copy-webpack-plugin'
 
@@ -39,7 +39,7 @@ module.exports = {
     modules: [path.resolve(__dirname, 'src'), 'node_modules'],
   },
   plugins: [
-    new cleanWebpackPlugin(),
+    new CleanWebpackPlugin(),
     new writeFilePlugin(),
     new htmlWebpackPlugin({
       template: './src/index.html',

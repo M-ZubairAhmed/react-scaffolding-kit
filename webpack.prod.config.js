@@ -2,7 +2,7 @@ import webpack from 'webpack'
 import path from 'path'
 import htmlWebpackPlugin from 'html-webpack-plugin'
 import miniCssExtractPlugin from 'mini-css-extract-plugin'
-import cleanWebpackPlugin from 'clean-webpack-plugin'
+import { CleanWebpackPlugin } from 'clean-webpack-plugin'
 import terserJsWebpackPlugin from 'terser-webpack-plugin'
 import optimizeCssAssestsPlugin from 'optimize-css-assets-webpack-plugin'
 import copyWebpackPlugin from 'copy-webpack-plugin'
@@ -75,7 +75,7 @@ module.exports = {
   // },
   stats: 'verbose',
   plugins: [
-    new cleanWebpackPlugin(),
+    new CleanWebpackPlugin(),
     new webpack.HashedModuleIdsPlugin(),
     new htmlWebpackPlugin({
       // A unique utc string for cache busting of index.html
